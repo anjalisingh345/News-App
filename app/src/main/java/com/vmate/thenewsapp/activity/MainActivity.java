@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements Adapterclass.Item
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progress);
         nodatafound = findViewById(R.id.noResultTv);
+        progressBar.setVisibility(View.VISIBLE);
 
         layoutManager = new  LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
@@ -62,9 +63,9 @@ public class MainActivity extends AppCompatActivity implements Adapterclass.Item
 
     }
     private void getArtical() {
-        articalViewModel = ViewModelProviders.of(this).get(ArticalViewModel.class);
 
 articalViewModel.getArticalResponseLiveData().observe(this,articalResponse -> {
+    progressBar.setVisibility(View.VISIBLE);
     if (articalResponse != null && articalResponse.getArticalModels() != null
             && !articalResponse.getArticalModels().isEmpty()) {
 

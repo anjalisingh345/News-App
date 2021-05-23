@@ -51,7 +51,7 @@ public class Adapterclass extends RecyclerView.Adapter<Adapterclass.MyViewHolder
                 .load(articalModel.getImage())
                 .into(holder.imageView);
 
-        Toast.makeText(context,""+modelArrayList.size(),Toast.LENGTH_LONG).show();
+    //    Toast.makeText(context,""+modelArrayList.size(),Toast.LENGTH_LONG).show();
 
     }
 
